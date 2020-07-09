@@ -3,7 +3,8 @@ import React from "react";
 import Home from "./home/Home";
 import Owner from "./owner/Owner"
 import EmployeeCard from "./EmployeeCard/EmployeeCard"
-import AnimalCard from "./animal/AnimalCard";
+// import AnimalCard from "./animal/AnimalCard";
+import AnimalList from "./animal/AnimalList"
 import LocationCard from "./locations/Location"
 //only include these once they are built - previous practice exercise
 // import LocationCard from "./location/LocationCard";
@@ -20,12 +21,15 @@ const ApplicationViews = () => {
                     return <Home />;
                 }}
             />
-            <Route
+             <Route path="/animals" render={(props) => {
+      return <AnimalList />
+    }} />
+            {/* <Route
                 path="/animals"
                 render={props => {
                     return <AnimalCard />;
                 }}
-            />
+            /> */}
             <Route
                 path="/owner"
                 render={props => {

@@ -3,5 +3,18 @@
         { "id": 1, "name": "Doodles", "breed": "Poodle"},
         { "id": 2, "name": "Decker", "breed": "German Shepherd" },
         { "id": 3, "name": "Esme", "breed": "Pitbull" }
+    ],
+    "locations": [
+        { "id": 1, "city": "Nashville", "storeName": "Big Kennel of Nashville"},
+        { "id": 2, "city": "Rome", "storeName": "Big Kennel Italia"},
+        { "id": 3, "city": "Monteco", "storeName": "Big Kennel Monteco"}
+    ],
+    "employees": [
+        { "id": 1, "Name": "Conor McGregor", "job": "Pet Protector"},
+        { "id": 2, "city": "Drake", "job": "Vibes Man"},
+        { "id": 3, "city": "Cristiano Ronaldo", "job": "Drill Instructor"}
+    ],
+    "owner": [
+        { "id": 1, "Name": "Justin Bieber", "title": "The Big Cheese"}
     ]
 }
