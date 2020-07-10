@@ -1,35 +1,20 @@
 import React from "react";
 
 
-const LocationCard = () => {
+const LocationCard = (props) => {
+
+  let locationImage = props.location.imageName
+  console.log(locationImage)
     return (
         <div className="card">
           <div className="card-content">
             <picture>
-              <img src={require("./Rome.jpg")} alt="Rome location" />
+              <img src={require("../../images/"+locationImage)} alt="Rome location" />
             </picture>
             <h3>
-              Name: <span className="card-petname">Big Kennel Italia</span>
+              Name: <span className="card-petname">{props.location.storeName}</span>
             </h3>
-            <p>Location: Rome</p>
-          </div>
-          <div className="card-content">
-            <picture>
-              <img src={require("./nash.jpg")} alt="Rome location" />
-            </picture>
-            <h3>
-              Name: <span className="card-petname">Big Kennel of Nashville</span>
-            </h3>
-            <p>Location: Nashville</p>
-          </div>
-          <div className="card-content">
-            <picture>
-              <img src={require("./monaco.jpg")} alt="Rome location" />
-            </picture>
-            <h3>
-              Name: <span className="card-petname">Big Kennel Monteco</span>
-            </h3>
-            <p>Location: Monaco</p>
+    <p>Location: {props.location.city}</p>
           </div>
         </div>
       );

@@ -1,16 +1,16 @@
 import React from "react";
 
-const Owner = () => {
+const Owner = (props) => {
     return (
         <div className="card">
           <div className="card-content">
             <picture>
-              <img src={require("./justin.webp")} alt="Justin Bieber" />
+              <img src={require("../../images/justin.webp")} alt="Justin Bieber" />
             </picture>
             <h3>
-              Name: <span className="card-owner">Justin Bieber</span>
+              Name: <span className="card-owner">{props.owner.name}</span>
             </h3>
-            <p>Owner/Big Cheese</p>
+            <p>Job: {props.owner.title}</p>
           </div>
 
           </div>
