@@ -6,6 +6,7 @@ import EmployeeList from "./EmployeeCard/EmployeeList"
 import AnimalList from "./animal/AnimalList"
 import LocationList from "./locations/LocationsList"
 import AnimalDetail from "./animal/AnimalDetail"
+import LocationDetails from "./locations/loactionDetails"
 
 
 const ApplicationViews = () => {
@@ -37,7 +38,7 @@ const ApplicationViews = () => {
             />
 
             <Route
-                path="/locations"
+                exact path="/locations"
                 render={props => {
                     return <LocationList />;
                 }}
@@ -47,6 +48,13 @@ const ApplicationViews = () => {
                 // Pass the animalId to the AnimalDetailComponent
                 return <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
             }} />
+
+
+            <Route path="/locations/:locationId(\d+)" render={(props) => {
+                // Pass the animalId to the AnimalDetailComponent
+                return <LocationDetails locationsId={parseInt(props.match.params.locationId)} />
+            }} />
+
 
             {/*
   This is a new route to handle a URL with the following pattern:
