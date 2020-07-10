@@ -17,6 +17,11 @@ const AnimalList = () => {
         });
     };
 
+    const deleteAnimal = id => {
+        AnimalManager.delete(id)
+          .then(() => AnimalManager.getAll().then(setAnimals));
+      };
+
     // got the animals from the API on the component's first render
     useEffect(() => {
        
@@ -32,7 +37,7 @@ const AnimalList = () => {
     return (
         <div className="container-cards">
             {animals.map(animal =>
-                <AnimalCard key={animal.id} animal={animal} />
+                <AnimalCard key={animal.id} animal={animal} deleteAnimal={deleteAnimal}/>
             )}
         </div>
     );

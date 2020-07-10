@@ -18,6 +18,11 @@ const LocationList = () => {
 
         })
     ]
+    const deleteLocations = (id) => {
+        LocationManager.delete(id).then(() => {
+            LocationManager.getAll().then(setLocations)
+        })
+    }
 
     useEffect(() => {
         getLocations();
@@ -26,7 +31,7 @@ const LocationList = () => {
     return (
         <div className="container-cards">
             {locations.map(location => 
-                <LocationCard key={location.id} location={location}/>
+                <LocationCard key={location.id} location={location} deleteLocation={deleteLocations}/>
             )}
         </div>
         )

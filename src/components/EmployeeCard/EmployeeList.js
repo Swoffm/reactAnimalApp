@@ -13,6 +13,12 @@ const EmployeeList = () => {
         });
     }
 
+    const deleteEmployee = (id) => {
+        EmployeeManager.delete(id).then(() => {
+            EmployeeManager.getAll().then(setEmployees)
+        })
+    }
+
     //useEffect to load get employees on the first load
 
     useEffect(() => {
@@ -26,7 +32,7 @@ const EmployeeList = () => {
     return (
         <div className="container-cards">
             {employees.map(element =>
-                <EmployeeCard key={element.id} employee={element} />
+                <EmployeeCard key={element.id} employee={element} deleteEmployees={deleteEmployee} />
             )}
         </div>
     )
