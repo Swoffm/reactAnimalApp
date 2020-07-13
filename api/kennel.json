@@ -1,11 +1,11 @@
 {
   "animals": [
     {
-        "id": 1,
-        "name": "Decker",
-        "breed": "German Shepherd",
-        "careTaker": 1
-      },
+      "id": 1,
+      "name": "Decker",
+      "breed": "German Shepherd",
+      "careTaker": 1
+    },
     {
       "id": 2,
       "name": "Decker",
@@ -13,11 +13,11 @@
       "careTaker": 1
     },
     {
-        "id": 3,
-        "name": "Decker",
-        "breed": "German Shepherd",
-        "careTaker": 2
-      }
+      "id": 3,
+      "name": "Decker",
+      "breed": "German Shepherd",
+      "careTaker": 2
+    }
   ],
   "locations": [
     {

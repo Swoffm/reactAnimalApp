@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import AnimalManager from '../../directory/AnimalManager';
 import './AnimalDetail.css'
 import EmployeeManager from "../../directory/EmployeeManager"
@@ -6,7 +6,7 @@ import AnimalDetailsDOM from "../animal/AnimalDetailDOM"
 
 const AnimalDetail = props => {
     const [animal, setAnimal] = useState({ name: "", breed: "", employeeName: "", employeePic: "" });
-    
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         let animalCareTakerName;
@@ -29,6 +29,7 @@ const AnimalDetail = props => {
                     employeePic: animalCareTakerImage
 
                   })
+                  setIsLoading(false);
             })
             // <img src={require("../../images/" + animal.employeePic)} alt={animal.employeeName} />
 
@@ -40,9 +41,19 @@ const AnimalDetail = props => {
        
 
     }, [props.animalId]);
+
     
+
+    const handleDelete = () => {
+        //invoke the delete function in AnimalManger and re-direct to the animal list.
+        setIsLoading(true);
+        AnimalManager.delete(props.animalId).then(() =>
+          props.history.push("/animals")
+        );
+      };
+
     return (
-    animal.employeePic ? AnimalDetailsDOM(animal) : "null"
+    animal.employeePic ? AnimalDetailsDOM(animal, isLoading, handleDelete) : "null"
     )
     
   }

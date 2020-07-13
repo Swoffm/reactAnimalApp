@@ -9,7 +9,8 @@ const LocationList = () => {
 
     const [locations, setLocations] = useState([])
 
-    const getLocations = () => [
+    const getLocations = () => {
+        
         //get locations using location manager
         LocationManager.getAll().then(locationData => {
             setLocations(locationData)
@@ -17,7 +18,7 @@ const LocationList = () => {
             //IT OVERRIDES
 
         })
-    ]
+}
     const deleteLocations = (id) => {
         LocationManager.delete(id).then(() => {
             LocationManager.getAll().then(setLocations)

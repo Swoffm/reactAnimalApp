@@ -7,7 +7,7 @@ import AnimalList from "./animal/AnimalList"
 import LocationList from "./locations/LocationsList"
 import AnimalDetail from "./animal/AnimalDetail"
 import LocationDetails from "./locations/loactionDetails"
-
+import AnimalForm from './animal/AnimalForm'
 
 const ApplicationViews = () => {
     return (
@@ -21,7 +21,7 @@ const ApplicationViews = () => {
             />
             {/* Make sure you add the `exact` attribute here */}
             <Route exact path="/animals" render={(props) => {
-                return <AnimalList />
+                return <AnimalList {...props} />
             }} />
             <Route
                 path="/owner"
@@ -44,15 +44,32 @@ const ApplicationViews = () => {
                 }}
             />
 
-            <Route path="/animals/:animalId(\d+)" render={(props) => {
-                // Pass the animalId to the AnimalDetailComponent
-                return <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
-            }} />
+            <Route
+                path="/animals/:animalId(\d+)"
+                render={props => {
+                    // Pass the animalId to the AnimalDetailComponent
+                    return (
+                        <AnimalDetail
+                            animalId={parseInt(props.match.params.animalId)}
+                            {...props}
+                        />
+                    );
+                }}
+            />
 
 
-            <Route path="/locations/:locationId(\d+)" render={(props) => {
-                // Pass the animalId to the AnimalDetailComponent
-                return <LocationDetails locationsId={parseInt(props.match.params.locationId)} />
+            <Route path="/locations/:locationId(\d+)"
+                render={(props) => {
+                    // Pass the animalId to the AnimalDetailComponent
+                    return (
+                        <LocationDetails locationsId={parseInt(props.match.params.locationId)}
+                            {...props}
+                        />)
+                }} />
+
+
+            <Route path="/animals/new" render={(props) => {
+                return <AnimalForm {...props} />
             }} />
 
 

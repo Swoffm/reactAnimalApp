@@ -1,6 +1,9 @@
 import React from "react";
 
-const LocationDetailsDOM = (location) => {
+const LocationDetailsDOM = (location, isLoading, handleDelete) => {
+
+
+
    return ( <div className="card">
         <div className="card-content">
           
@@ -9,6 +12,9 @@ const LocationDetailsDOM = (location) => {
             <img src={require("../../images/" + location.imageName)} alt="Beautful picture of a city" />
             
             </picture>
+            <button type="button" disabled={isLoading} onClick={handleDelete}>
+          Discharge
+        </button>
             <p>Store Name: {location.storeName}</p>
    
         </div>
