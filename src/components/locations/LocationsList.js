@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LocationCard from "./Location"
 import LocationManager from "../../directory/LocationsManager"
 
-const LocationList = () => {
+const LocationList = (props) => {
     //useState first to have it displayed to the DOM
     //The first value in useState is the inital value that will loaded to the DOM
     //the second is a function that allows for the manipulation of Data
@@ -10,7 +10,7 @@ const LocationList = () => {
     const [locations, setLocations] = useState([])
 
     const getLocations = () => {
-        
+
         //get locations using location manager
         LocationManager.getAll().then(locationData => {
             setLocations(locationData)
@@ -18,7 +18,7 @@ const LocationList = () => {
             //IT OVERRIDES
 
         })
-}
+    }
     const deleteLocations = (id) => {
         LocationManager.delete(id).then(() => {
             LocationManager.getAll().then(setLocations)
@@ -31,11 +31,18 @@ const LocationList = () => {
 
     return (
         <div className="container-cards">
-            {locations.map(location => 
-                <LocationCard key={location.id} location={location} deleteLocation={deleteLocations}/>
+            <section className="section-content">
+                <button type="button"
+                    className="btn"
+                    onClick={() => { props.history.push("/locations/new") }}>
+                    Add Location
+  </button>
+            </section>
+            {locations.map(location =>
+                <LocationCard key={location.id} location={location} deleteLocation={deleteLocations} />
             )}
         </div>
-        )
+    )
 
 }
 

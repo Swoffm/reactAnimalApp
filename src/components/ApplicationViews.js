@@ -10,6 +10,7 @@ import LocationDetails from "./locations/loactionDetails"
 import AnimalForm from './animal/AnimalForm'
 import Login from "./auth/Login";
 import AnimalEditForm from "./animal/AnimalEditForm"
+import LocationForm from "./locations/LocationForm"
 
 
 const ApplicationViews = () => {
@@ -107,6 +108,9 @@ const ApplicationViews = () => {
 
             <Route path="/animals/new" render={(props) => {
                 return <AnimalForm {...props} />
+            }} />
+            <Route path="/locations/new" render={(props) => {
+                return <LocationForm {...props} />
             }} />
 
 
