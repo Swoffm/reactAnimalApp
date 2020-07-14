@@ -1,39 +1,25 @@
 import React from "react";
 
 
-const EmployeeCard = () => {
+const EmployeeCard = (props) => {
+   
+    let employeeImage = props.employee.imageName
+
 
     return (
         <div className="card">
             <div className="card-content">
                 <picture>
-                    <img src={require("./conor.jpg")} alt="Conor Mcgregor" />
+                    <img src={require("../../images/" + employeeImage)} alt={props.employee.name} />
                 </picture>
                 <h3>
-                    Name: <span className="card-employee">Conor McGregor</span>
+                    Name: <span className="card-employee">{props.employee.name}</span>
                 </h3>
-                <p>Job: Pet Protector</p>
+                <p>Job: {props.employee.job}</p>
+        <button type="button" onClick={() => props.deleteEmployees(props.employee.id)}>FIRE</button>
+                
             </div>
 
-            <div className="card-content">
-                <picture>
-                    <img src={require("./Drake.jpg")} alt="Drake" />
-                </picture>
-                <h3>
-                    Name: <span className="card-employee">Drake</span>
-                </h3>
-                <p>Job: Vibes Man</p>
-            </div>
-
-            <div className="card-content">
-                <picture>
-                    <img src={require("./ronaldo.jpg")} alt="Cristiano Ronaldo" />
-                </picture>
-                <h3>
-                    Name: <span className="card-employee">Cristiano Ronaldo</span>
-                </h3>
-                <p>Job: Drill Instructor</p>
-            </div>
         </div>
 
 

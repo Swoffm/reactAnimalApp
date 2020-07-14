@@ -1,7 +1,68 @@
 {
-    "animals": [
-        { "id": 1, "name": "Doodles", "breed": "Poodle"},
-        { "id": 2, "name": "Decker", "breed": "German Shepherd" },
-        { "id": 3, "name": "Esme", "breed": "Pitbull" }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "NightMare",
+      "breed": "Pit Bull"
+    },
+    {
+      "id": 2,
+      "name": "Decker",
+      "breed": "German Shepherd",
+      "careTaker": 1
+    },
+    {
+      "id": 3,
+      "name": "Decker",
+      "breed": "German Shepherd",
+      "careTaker": 2
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "city": "Nashville",
+      "storeName": "Big Kennel of Nashville",
+      "imageName": "nash.jpg"
+    },
+    {
+      "id": 2,
+      "city": "Rome",
+      "storeName": "Big Kennel Italia",
+      "imageName": "Rome.jpg"
+    },
+    {
+      "id": 3,
+      "city": "Monaco",
+      "storeName": "Big Kennel Monaco",
+      "imageName": "monaco.jpg"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Conor McGregor",
+      "job": "Pet Protector",
+      "imageName": "conor.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Drake",
+      "job": "Vibes Man",
+      "imageName": "Drake.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Cristiano Ronaldo",
+      "job": "Drill Instructor",
+      "imageName": "ronaldo.jpg"
+    }
+  ],
+  "owner": [
+    {
+      "id": 1,
+      "name": "Justin Bieber",
+      "title": "The Big Cheese"
+    }
+  ]
 }
