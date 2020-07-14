@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import AnimalManager from '../../directory/AnimalManager';
-import './AnimalForm.css'
+import './AnimalForm.css';
+import AnimalFormDOM from "./AnimalFormDOM"
+
 
 const AnimalForm = props => {
-  const [animal, setAnimal] = useState({ name: "", breed: "" });
+  const [animal, setAnimal] = useState({ name: "", breed: "", employee: ""});
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFieldChange = evt => {
@@ -25,40 +27,9 @@ const AnimalForm = props => {
         .then(() => props.history.push("/animals"));
     }
   };
+  
 
-  return (
-    <>
-      <form>
-        <fieldset>
-          <div className="formgrid">
-            <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="name"
-              placeholder="Animal name"
-            />
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              required
-              onChange={handleFieldChange}
-              id="breed"
-              placeholder="Breed"
-            />
-            <label htmlFor="breed">Breed</label>
-          </div>
-          <div className="alignRight">
-            <button
-              type="button"
-              disabled={isLoading}
-              onClick={constructNewAnimal}
-            >Submit</button>
-          </div>
-        </fieldset>
-      </form>
-    </>
-  );
+  return (AnimalFormDOM(handleFieldChange, constructNewAnimal, {...props}, setAnimal, animal));
 };
 
 export default AnimalForm
