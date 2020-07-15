@@ -56,19 +56,28 @@
       "name": "Cristiano Ronaldo",
       "job": "Drill Instructor",
       "imageName": "ronaldo.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Steve",
-      "job": "Cleaning!",
-      "imageName": "Drake.jpg"
     }
   ],
   "owner": [
     {
       "id": 1,
       "name": "Justin Bieber",
-      "title": "The Big Cheese"
+      "pet": "The Big Cheese"
+    },
+    {
+      "name": "Gavin Swofford",
+      "pet": "Pit Bull",
+      "id": 2
+    },
+    {
+      "name": "iPhone",
+      "pet": "Pit Bull",
+      "id": 3
+    },
+    {
+      "name": "iPhone",
+      "pet": "Pit Bull",
+      "id": 4
     }
   ]
 }
