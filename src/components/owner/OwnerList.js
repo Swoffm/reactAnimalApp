@@ -11,6 +11,11 @@ const OwnerList = (props) => {
             setOwner(ownerDataAPI)
         })
     }
+    const deleteOwner = (id) => {
+        OwnerManager.delete(id).then(() => {
+            OwnerManager.getAll().then(setOwner)
+        })
+    }
 
     //use useEffect to gather data when the page loads
     //useEffect gathers once on load
@@ -29,7 +34,7 @@ const OwnerList = (props) => {
 </button>
     </section>
             {owners.map(element =>
-                <Owner key={element.id} owner={element} />
+                <Owner key={element.id} owner={element} deleteOwner={deleteOwner} {...props}/>
             )}
         </div>
     )
