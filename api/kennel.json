@@ -56,6 +56,12 @@
       "name": "Cristiano Ronaldo",
       "job": "Drill Instructor",
       "imageName": "ronaldo.jpg"
+    },
+    {
+      "name": "Steve",
+      "job": "Cleaning",
+      "imageName": "Drake.jpg",
+      "id": 4
     }
   ],
   "owner": [

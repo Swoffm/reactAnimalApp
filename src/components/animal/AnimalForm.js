@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AnimalManager from '../../directory/AnimalManager';
 import './AnimalForm.css';
 import AnimalFormDOM from "./AnimalFormDOM"

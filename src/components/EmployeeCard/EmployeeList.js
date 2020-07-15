@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import EmployeeManager from "../../directory/EmployeeManager"
 
 
-const EmployeeList = () => {
+const EmployeeList = (props) => {
     const [employees, setEmployees] = useState([])
 
     const getEmployees = () => {
@@ -31,6 +31,13 @@ const EmployeeList = () => {
     //employees to employee Card
     return (
         <div className="container-cards">
+           <section className="section-content">
+                <button type="button"
+                    className="btn"
+                    onClick={() => { props.history.push("/employees/new") }}>
+                    Add Employee
+  </button>
+            </section>
             {employees.map(element =>
                 <EmployeeCard key={element.id} employee={element} deleteEmployees={deleteEmployee} />
             )}

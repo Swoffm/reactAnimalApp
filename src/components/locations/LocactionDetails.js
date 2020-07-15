@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import locationManager from '../../directory/LocationsManager';
-import LocationDetailsDOM from "./loactionDetailsDOM"
+import LocationDetailsDOM from "./LocationDetailsDOM"
 // import './locationDetails.css'
 
 

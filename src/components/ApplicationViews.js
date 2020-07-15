@@ -6,11 +6,13 @@ import EmployeeList from "./EmployeeCard/EmployeeList"
 import AnimalList from "./animal/AnimalList"
 import LocationList from "./locations/LocationsList"
 import AnimalDetail from "./animal/AnimalDetail"
-import LocationDetails from "./locations/loactionDetails"
+import LocationDetails from "./locations/LocactionDetails"
 import AnimalForm from './animal/AnimalForm'
 import Login from "./auth/Login";
 import AnimalEditForm from "./animal/AnimalEditForm"
+import LocationFormEdit from "./locations/LocationsFormEdit"
 import LocationForm from "./locations/LocationForm"
+import EmployeeForm from "./EmployeeCard/EmployeeForm"
 
 
 const ApplicationViews = () => {
@@ -53,7 +55,7 @@ const ApplicationViews = () => {
             />
 
             <Route
-                path="/Employees"
+               exact path="/Employees"
                 render={props => {
                     if (isAuthenticated()) {
                         return <EmployeeList {...props} />
@@ -87,6 +89,15 @@ const ApplicationViews = () => {
                     );
                 }}
             />
+            <Route path="/employees/:employeesId(\d+)/edit" render={props => {
+                if (isAuthenticated()) {
+                    return <EmployeeEditForm {...props} />
+                } else {
+                    return <Redirect to="/login" />
+                }
+            }} />
+
+
             <Route path="/animals/:animalId(\d+)/edit" render={props => {
                 if (isAuthenticated()) {
                     return <AnimalEditForm {...props} />
@@ -94,9 +105,16 @@ const ApplicationViews = () => {
                     return <Redirect to="/login" />
                 }
             }} />
+            <Route path="/locations/:locationId(\d+)/edit" render={props => {
+                if (isAuthenticated()) {
+                    return <LocationFormEdit {...props} />
+                } else {
+                    return <Redirect to="/login" />
+                }
+            }} />
 
 
-            <Route path="/locations/:locationId(\d+)"
+            <Route exact path="/locations/:locationId(\d+)"
                 render={(props) => {
                     // Pass the animalId to the AnimalDetailComponent
                     return (
@@ -111,6 +129,9 @@ const ApplicationViews = () => {
             }} />
             <Route path="/locations/new" render={(props) => {
                 return <LocationForm {...props} />
+            }} />
+             <Route path="/employees/new" render={(props) => {
+                return <EmployeeForm {...props} />
             }} />
 
 
