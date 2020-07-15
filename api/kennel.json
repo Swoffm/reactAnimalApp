@@ -58,10 +58,10 @@
       "imageName": "ronaldo.jpg"
     },
     {
+      "id": 4,
       "name": "Steve",
-      "job": "Cleaning",
-      "imageName": "Drake.jpg",
-      "id": 4
+      "job": "Cleaning!",
+      "imageName": "Drake.jpg"
     }
   ],
   "owner": [

@@ -13,7 +13,7 @@ import AnimalEditForm from "./animal/AnimalEditForm"
 import LocationFormEdit from "./locations/LocationsFormEdit"
 import LocationForm from "./locations/LocationForm"
 import EmployeeForm from "./EmployeeCard/EmployeeForm"
-
+import EmployeeEditForm from "./EmployeeCard/EmployeeEditForm"
 
 const ApplicationViews = () => {
     // Check if credentials are in session storage returns true/false
