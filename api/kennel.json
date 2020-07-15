@@ -2,20 +2,27 @@
   "animals": [
     {
       "id": 1,
-      "name": "NightMare",
-      "breed": "Pit Bull"
+      "name": "Doodles",
+      "breed": "German Sheperd",
+      "employeeId": 3
     },
     {
       "id": 2,
-      "name": "Decker",
-      "breed": "German Shepherd",
-      "careTaker": 1
+      "name": "Esme",
+      "breed": "Pitbull",
+      "employeeId": 1
     },
     {
+      "name": "Jack",
+      "breed": "Big cat",
       "id": 3,
-      "name": "Decker",
-      "breed": "German Shepherd",
-      "careTaker": 2
+      "employeeId": 1
+    },
+    {
+      "name": "Angus",
+      "breed": "Gerbil",
+      "id": 4,
+      "employeeId": 2
     }
   ],
   "locations": [

@@ -39,7 +39,7 @@ const EmployeeList = (props) => {
   </button>
             </section>
             {employees.map(element =>
-                <EmployeeCard key={element.id} employee={element} deleteEmployees={deleteEmployee} />
+                <EmployeeCard key={element.id} employee={element} deleteEmployees={deleteEmployee} {...props} />
             )}
         </div>
     )

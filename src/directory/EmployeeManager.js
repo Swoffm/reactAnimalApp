@@ -39,5 +39,9 @@ export default {
         const randomLocations = locations[randomIndex];
         return randomLocations.id;
       });
-  }
+  },
+  getWithAnimals(id) {
+    return fetch(`${remoteURL}/employees/${id}?_embed=animals`)
+            .then(result => result.json())
+}
 }
