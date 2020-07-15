@@ -63,6 +63,11 @@
       "id": 1,
       "name": "Justin Bieber",
       "pet": "The Big Cheese"
+    },
+    {
+      "name": "Blue",
+      "pet": "Pit Bull",
+      "id": 2
     }
   ]
 }
