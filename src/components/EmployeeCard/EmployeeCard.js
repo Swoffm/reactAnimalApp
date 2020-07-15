@@ -4,8 +4,7 @@ import "./EmployeeCard.css"
 
 
 const EmployeeCard = (props) => {
-    console.log(props)
-    console.log(props.history)
+   
    
     let employeeImage = props.employee.imageName
 

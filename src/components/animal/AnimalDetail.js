@@ -14,7 +14,7 @@ const AnimalDetail = props => {
       //get(id) from AnimalManager and hang on to the data; put it into state
       AnimalManager.get(props.animalId)
         .then(animal => {
-            EmployeeManager.get(animal.careTaker).then((employee) => {
+            EmployeeManager.get(animal.employeeId).then((employee) => {
                 animalCareTakerName = employee.name
                 animalCareTakerImage = employee.imageName
                

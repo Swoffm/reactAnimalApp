@@ -19,10 +19,10 @@
       "employeeId": 1
     },
     {
-      "name": "Angus",
-      "breed": "Gerbil",
-      "id": 4,
-      "employeeId": 2
+      "name": "iPhone",
+      "breed": "123",
+      "employeeId": "1",
+      "id": 4
     }
   ],
   "locations": [

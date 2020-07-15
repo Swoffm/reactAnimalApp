@@ -136,6 +136,7 @@ const ApplicationViews = () => {
                             {...props}
                         />)
                 }} />
+              
 
 
             <Route path="/animals/new" render={(props) => {
