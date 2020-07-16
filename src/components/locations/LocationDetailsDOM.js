@@ -3,8 +3,9 @@ import EmployeeCard from "../EmployeeCard/EmployeeCard"
 
 
 const LocationDetailsDOM = (location,  isLoading, handleDelete, deleteEmployee, employees, props) => {
-
-console.log(employees)
+const employeeName = []
+console.log(employeeName.push(employees))
+console.log(employeeName)
 
    return ( <div className="locationDetails"><div className="card">
         <div className="card-content">
@@ -21,9 +22,9 @@ console.log(employees)
    
         </div>
       </div>
-      {/* {employees.map(element =>
+      {employees.map(element =>
                 <EmployeeCard key={element.id} employee={element} deleteEmployees={deleteEmployee} {...props} />
-            )} */}
+            )}
       
       </div> )
 }

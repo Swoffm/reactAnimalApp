@@ -45,14 +45,15 @@
       "name": "Conor McGregor",
       "job": "Pet Protector",
       "imageName": "conor.jpg",
-      "location": 1
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "Drake",
       "job": "Vibes Man",
       "imageName": "Drake.jpg",
-      "location": 2
+      "locationId": 3
+      
 
     },
     {
@@ -60,7 +61,7 @@
       "name": "Cristiano Ronaldo",
       "job": "Drill Instructor",
       "imageName": "ronaldo.jpg",
-      "location": 3
+      "locationId": 2
 
     }
   ],

@@ -12,32 +12,24 @@ const LocationDetails = props => {
     const [isLoading, setIsLoading] = useState(true);
     
 
+    console.log(employees)
 
     useEffect(() => {
         //got here now make call to get employee with animal
-        console.log(props)
-        console.log(props.match)
-        console.log(props.match.params)
-        console.log(employees)
-        locationManager.getWithEmployees(props.match.params.locationId)
-          .then(APIResult => {
-              console.log(APIResult, "asdsadas")
-            // setEmployee(APIResult);
-            APIResult.employeeId.map(element => {
-                EmployeeManager.get(element).then((locations)=> {
-                console.log(element)
-                console.log(locations)
-                    setLocation({
-                        city: APIResult.city,
-                        storeName: APIResult.storeName,
-                        imageName: APIResult.imageName
-                    })
-                    setEmployee(locations)
-                    setIsLoading(false);
-                    console.log(location)
-                })
-            })
-          });
+       locationManager.getWithEmployees(props.match.params.locationId).then(locations => {
+         console.log(locations.employees)
+         setLocation({
+          city: locations.city,
+          storeName: locations.storeName,
+          imageName: locations.imageName
+         })
+         console.log(employees)
+
+         setEmployee(locations.employees)
+         console.log(employees)
+
+       
+       })
       }, [props.locationsId]);
 
 
