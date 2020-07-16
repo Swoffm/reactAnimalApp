@@ -37,7 +37,12 @@ let firstFirstEmployee = employees[0]
     } else {
       setIsLoading(true);
       // Create the animal and redirect user to animal list
-      AnimalManager.post(animal)
+      let newAnimal = {
+        name: animal.name, 
+        breed: animal.breed, 
+        employeeId: parseInt(animal.employeeId)}
+        console.log(typeof newAnimal.employeeId)
+      AnimalManager.post(newAnimal)
         .then(() => props.history.push("/animals"));
     }
   };

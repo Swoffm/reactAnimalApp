@@ -30,10 +30,10 @@ const NavBar = () => {
           </li>
 
           <li>
-            <Link className="nav-link" to="/Employees">
-            Employees
-            </Link>
-          </li>
+            <Link className="nav-link" to="/employees">
+              Employees
+              </Link>
+              </li>
 
           <li>
             <Link className="nav-link" to="/owner">
