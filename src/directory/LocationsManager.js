@@ -38,5 +38,9 @@ export default {
         const randomLocation = locations[randomIndex];
         return randomLocation.id;
       });
-  }
+  },
+  getWithEmployees(id) {
+    return fetch(`${remoteURL}/locations/${id}?_embed=employees`)
+            .then(result => result.json())
+}
 }
