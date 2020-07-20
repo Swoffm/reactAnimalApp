@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AnimalManager from '../../directory/AnimalManager';
+import EmployeeManager from '../../directory/EmployeeManager';
 import './AnimalForm.css';
 import AnimalFormDOM from "./AnimalFormDOM"
 
 
 const AnimalForm = props => {
-  const [animal, setAnimal] = useState({ name: "", breed: "", employee: ""});
+  const [animal, setAnimal] = useState({ name: "", breed: "", employeeId: ""});
+  
   const [isLoading, setIsLoading] = useState(false);
+
+  const [employees, setEmployee] = useState([])
+let firstFirstEmployee = employees[0] 
+
+       useEffect(() => {
+        EmployeeManager.getAll().then((employee) => {
+          setEmployee(employee)
+          
+        
+      });
+  }, []);
 
   const handleFieldChange = evt => {
     const stateToChange = { ...animal };
@@ -18,18 +31,25 @@ const AnimalForm = props => {
   */
   const constructNewAnimal = evt => {
     evt.preventDefault();
-    if (animal.name === "" || animal.breed === "") {
+    if (animal.name === "" || animal.breed === "" || animal.employeeId === "") {
       window.alert("Please input an animal name and breed");
+      console.log(firstFirstEmployee.id)
     } else {
       setIsLoading(true);
       // Create the animal and redirect user to animal list
-      AnimalManager.post(animal)
+      let newAnimal = {
+        name: animal.name, 
+        breed: animal.breed, 
+        employeeId: parseInt(animal.employeeId)}
+        console.log(typeof newAnimal.employeeId)
+      AnimalManager.post(newAnimal)
         .then(() => props.history.push("/animals"));
     }
   };
   
+  
 
-  return (AnimalFormDOM(handleFieldChange, constructNewAnimal, {...props}, setAnimal, animal));
+   return (firstFirstEmployee?AnimalFormDOM(handleFieldChange, constructNewAnimal, props, setAnimal, animal, employees, firstFirstEmployee):"null")
 };
 
 export default AnimalForm

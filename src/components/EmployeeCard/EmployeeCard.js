@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./EmployeeCard.css"
 
 
 const EmployeeCard = (props) => {
+   
    
     let employeeImage = props.employee.imageName
 
@@ -16,6 +19,13 @@ const EmployeeCard = (props) => {
                     Name: <span className="card-employee">{props.employee.name}</span>
                 </h3>
                 <p>Job: {props.employee.job}</p>
+
+                <Link to={`/employees/${props.employee.id}/edit`}>
+        <button>Edit</button>
+        </Link>
+        <button type="button"
+        onClick={() => { props.history.push(`/employees/${props.employee.id}/details`) }}>Details</button>
+
         <button type="button" onClick={() => props.deleteEmployees(props.employee.id)}>FIRE</button>
                 
             </div>

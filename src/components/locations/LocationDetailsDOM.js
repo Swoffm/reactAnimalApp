@@ -1,10 +1,13 @@
 import React from "react";
-
-const LocationDetailsDOM = (location, isLoading, handleDelete) => {
-
+import EmployeeCard from "../EmployeeCard/EmployeeCard"
 
 
-   return ( <div className="card">
+const LocationDetailsDOM = (location,  isLoading, handleDelete, deleteEmployee, employees, props) => {
+const employeeName = []
+console.log(employeeName.push(employees))
+console.log(employeeName)
+
+   return ( <div className="locationDetails"><div className="card">
         <div className="card-content">
           
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{location.city}</span></h3>
@@ -18,6 +21,11 @@ const LocationDetailsDOM = (location, isLoading, handleDelete) => {
             <p>Store Name: {location.storeName}</p>
    
         </div>
+      </div>
+      {employees.map(element =>
+                <EmployeeCard key={element.id} employee={element} deleteEmployees={deleteEmployee} {...props} />
+            )}
+      
       </div> )
 }
 

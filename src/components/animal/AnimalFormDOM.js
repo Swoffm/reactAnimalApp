@@ -1,38 +1,10 @@
 /// this will hold the JSX for Animal Form
 import React, {useState, useEffect} from 'react';
-import EmployeeManager from "../../directory/EmployeeManager"
-import HelperObject from "../HelperFunction/Helper"
 
 
-const AnimalFormDOM = (handleFieldChange, constructNewAnimal, props, setAnimal, animal) => {
-    let employees = []
-    let option = ""
-    let DOM = <option>Steve</option>
-    const [employee, setEmployee] = useState({employee: ""})
-
-
-    useEffect(() => {
-        EmployeeManager.getAll().then((employeeData) => {
-            const employeeName = HelperObject.CounterFunction(employeeData)
-          
-        
-            employees.push(employeeName)
-            for (let element of employees) {
-                for (let obj of element) {
-                    option += `<option value=${obj}>${obj}</option>`
-                }
-            }
-            setEmployee({
-                employee: option
-            })
-            setAnimal({
-                employee: option
-            })
-            console.log(employee)
-        
-        })
-    }, [employee.employee])
-       
+const AnimalFormDOM = (handleFieldChange, constructNewAnimal, props, setAnimal, animal, employees,firstFirstEmployee) => {
+  
+   
 
 
     return (
@@ -57,8 +29,20 @@ const AnimalFormDOM = (handleFieldChange, constructNewAnimal, props, setAnimal, 
                         />
                         <label htmlFor="breed">Breed</label>
 
-                        <select>{employee.employeee}</select>
-                        <label htmlFor="selector">Employees</label>
+                        <select
+              className="form-control"
+              id="employeeId"
+              
+              onChange={handleFieldChange}
+            ><option >Select an Employee
+          </option>
+              {employees.map(employee =>
+                <option key={employee.id} value={employee.id}>
+                  {employee.name}
+                </option>
+              )}
+            </select>
+            <label htmlFor="employeeId">Care Taker: </label>
                     </div>
                     <div className="alignRight">
                         <button

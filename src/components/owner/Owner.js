@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Owner = (props) => {
     return (
@@ -10,7 +11,14 @@ const Owner = (props) => {
             <h3>
               Name: <span className="card-owner">{props.owner.name}</span>
             </h3>
-            <p>Job: {props.owner.title}</p>
+            <p>Pet: {props.owner.pet}</p>
+
+            <Link to={`/owner/${props.owner.id}/edit`}>
+        <button>Edit</button>
+        </Link>
+
+        <button type="button" onClick={() => props.deleteOwner(props.owner.id)}>Discharge</button>
+       
           </div>
 
           </div>

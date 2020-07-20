@@ -2,20 +2,21 @@
   "animals": [
     {
       "id": 1,
-      "name": "NightMare",
-      "breed": "Pit Bull"
+      "name": "Doodles",
+      "breed": "German Sheperd",
+      "employeeId": 3
     },
     {
-      "id": 2,
-      "name": "Decker",
-      "breed": "German Shepherd",
-      "careTaker": 1
+      "name": "iPhone",
+      "breed": "123",
+      "employeeId": 1,
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Decker",
-      "breed": "German Shepherd",
-      "careTaker": 2
+      "name": "123123213",
+      "breed": "1232131231",
+      "employeeId": 2,
+      "id": 5
     }
   ],
   "locations": [
@@ -43,26 +44,37 @@
       "id": 1,
       "name": "Conor McGregor",
       "job": "Pet Protector",
-      "imageName": "conor.jpg"
+      "imageName": "conor.jpg",
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "Drake",
       "job": "Vibes Man",
-      "imageName": "Drake.jpg"
+      "imageName": "Drake.jpg",
+      "locationId": 3
+      
+
     },
     {
       "id": 3,
       "name": "Cristiano Ronaldo",
       "job": "Drill Instructor",
-      "imageName": "ronaldo.jpg"
+      "imageName": "ronaldo.jpg",
+      "locationId": 2
+
     }
   ],
   "owner": [
     {
       "id": 1,
       "name": "Justin Bieber",
-      "title": "The Big Cheese"
+      "pet": "The Big Cheese"
+    },
+    {
+      "name": "Blue",
+      "pet": "Pit Bull",
+      "id": 2
     }
   ]
 }

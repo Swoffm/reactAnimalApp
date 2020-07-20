@@ -44,7 +44,7 @@ const AnimalList = (props) => {
   </button>
 </section>
             {animals.map(animal =>
-                <AnimalCard key={animal.id} animal={animal} deleteAnimal={deleteAnimal} {...props}/>
+                <AnimalCard key={animal.id} animal={animal} deleteAnimal={deleteAnimal}/>
             )}
         </div>
     );

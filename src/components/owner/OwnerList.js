@@ -2,13 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Owner from "./Owner"
 import OwnerManager from "../../directory/ownerManager"
 
-const OwnerList = () => {
+const OwnerList = (props) => {
     const [owners, setOwner] = useState([])
 
     const getOwner = () => {
         //get data from apai
         OwnerManager.getAll().then((ownerDataAPI)=>{
             setOwner(ownerDataAPI)
+        })
+    }
+    const deleteOwner = (id) => {
+        OwnerManager.delete(id).then(() => {
+            OwnerManager.getAll().then(setOwner)
         })
     }
 
@@ -21,9 +26,15 @@ const OwnerList = () => {
 
     return (
         //Remeber Map returns an array with the adjusted values
-        <div className="container-cards">
+        <div className="container-cards"><section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => { props.history.push("/owner/new") }}>
+            Add Owner
+</button>
+    </section>
             {owners.map(element =>
-                <Owner key={element.id} owner={element} />
+                <Owner key={element.id} owner={element} deleteOwner={deleteOwner} {...props}/>
             )}
         </div>
     )
